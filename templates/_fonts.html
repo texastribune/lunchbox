@@ -1,7 +1,14 @@
 <!-- Fonts -->
 {{ JS.push('js/lib/webfont.js') }}
 {{ JS.render('js/webfont.min.js') }}
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.10/webfont.js"></script>
 <script>
-	// Define your web fonts here.
-	// See https://github.com/typekit/webfontloader for documentation
+  // Define your web fonts here.
+  // See https://github.com/typekit/webfontloader for documentation
+  WebFont.load({
+    custom: {
+      families: ['Knockout 49 A', 'Knockout 49 B', 'Whitney SSm A', 'Whitney SSm B'],
+      urls: ['/css/hfj.css']
+    }
+  });
 </script>

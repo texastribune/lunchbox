@@ -5,14 +5,14 @@ var elementPadding = 40; // padding around the logo and credit text
 // logo configuration
 // the name of the logo object should match the value of the corresponding radio button in the HTML.
 var logos = {
-    'lunchbox': {
+    'tribune': {
         whitePath: '../img/tt-logo-white.png', // path to white logo
         blackPath: '../img/tt-logo-black.png', // path to black logo
         w: 200, // width of logo
         h: 22, // height of logo
         display: 'Texas Tribune'
     },
-    'socializr': {
+    'tribtalk': {
         whitePath: '../img/tribtalk-logo-white.png',
         blackPath: '../img/tribtalk-logo-black.png',
         w: 100,
@@ -91,7 +91,7 @@ var copyrightOptions = {
 
 // app load defaults
 var currentCrop = 'twitter'; // default crop size
-var currentLogo = 'lunchbox'; // default logo slug
+var currentLogo = 'tribune'; // default logo slug
 var currentLogoColor = 'white'; // default logo color
 var currentTextColor = 'white'; // default text color
 var defaultImage = '../img/test-kitten.jpg'; // path to image to load as test image
