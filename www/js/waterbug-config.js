@@ -10,7 +10,7 @@ var logos = {
         blackPath: '../img/tt-logo-black.png', // path to black logo
         w: 200, // width of logo
         h: 22, // height of logo
-        display: 'Texas Tribune'
+        display: 'Tribune'
     },
     'tribtalk': {
         whitePath: '../img/tribtalk-logo-white.png',
