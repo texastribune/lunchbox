@@ -8,15 +8,15 @@ var logos = {
     'tribune': {
         whitePath: '../img/tt-logo-white.png', // path to white logo
         blackPath: '../img/tt-logo-black.png', // path to black logo
-        w: 200, // width of logo
-        h: 22, // height of logo
+        w: 250, // width of logo
+        h: 28, // height of logo
         display: 'Tribune'
     },
     'tribtalk': {
         whitePath: '../img/tribtalk-logo-white.png',
         blackPath: '../img/tribtalk-logo-black.png',
-        w: 100,
-        h: 100,
+        w: 250,
+        h: 50,
         display: 'TribTalk'
     }
 };
