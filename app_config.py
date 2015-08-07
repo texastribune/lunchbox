@@ -22,7 +22,7 @@ PROJECT_FILENAME = 'lunchbox'
 
 # The name of the repository containing the source
 REPOSITORY_NAME = 'lunchbox'
-GITHUB_USERNAME = 'nprapps'
+GITHUB_USERNAME = 'texastribune'
 REPOSITORY_URL = 'git@github.com:%s/%s.git' % (GITHUB_USERNAME, REPOSITORY_NAME)
 REPOSITORY_ALT_URL = None # 'git@bitbucket.org:nprapps/%s.git' % REPOSITORY_NAME'
 
@@ -31,12 +31,12 @@ DEV_CONTACT = 'EDIT THIS IN APP_CONFIG.PY'
 """
 DEPLOYMENT
 """
-PRODUCTION_S3_BUCKET = 'apps.npr.org'
-STAGING_S3_BUCKET = 'stage-apps.npr.org'
+PRODUCTION_S3_BUCKET = ''
+STAGING_S3_BUCKET = ''
 DEFAULT_MAX_AGE = 20
 
-FILE_SERVER_USER = 'ubuntu'
-FILE_SERVER = 'tools.apps.npr.org'
+FILE_SERVER_USER = ''
+FILE_SERVER = ''
 FILE_SERVER_PATH = '~/www'
 
 # These variables will be set at runtime. See configure_targets() below

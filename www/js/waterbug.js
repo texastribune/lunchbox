@@ -144,13 +144,20 @@ var buildForm = function() {
 * Draw the image, then the logo, then the text
 */
 var renderCanvas = function() {
-    // canvas is always the same width
-    canvas.width = canvasWidth;
 
     // if we're cropping, use the aspect ratio for the height
-    if (currentCrop !== 'original') {
-        canvas.height = canvasWidth / (16/9);
+    if (currentCrop === 'twitter') {
+        canvasWidth = 1024;
+        canvas.height = 512;
+    } else if (currentCrop === 'instagram') {
+        canvasWidth = 612;
+        canvas.height = 612;
+    } else if (currentCrop === 'original') {
+        canvasWidth = 1024;
     }
+
+    // canvas is always the same width
+    canvas.width = canvasWidth;
 
     // clear the canvas
     ctx.clearRect(0,0,canvas.width,canvas.height);
@@ -540,6 +547,8 @@ var onCropChange = function() {
 
     if (currentCrop !== 'original') {
         var dragClass = shallowImage ? 'is-draggable shallow' : 'is-draggable';
+        dx = 0;
+        dy = 0;
         $canvas.addClass(dragClass);
         $dragHelp.show();
     } else {
