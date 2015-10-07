@@ -272,20 +272,21 @@ var renderCanvas = function() {
 var buildCreditString = function() {
     var creditString;
     var val = $copyrightHolder.val();
+    var separator;
 
     if ($photographer.val() !== '') {
-        if (copyrightOptions['freelance']) {
-          if (copyrightOptions[val]['source']) {
-            creditString = $photographer.val() + ' ' + copyrightOptions[val]['source'];
-          } else {
-              creditString = $photographer.val() + ' ' + $source.val();
-          }
+        if (copyrightOptions[val]['display'] === 'Freelance') {
+          separator = ' ';
+        } else if (copyrightOptions[val]['display'] === 'Other') {
+          separator = '';
         } else {
-          if (copyrightOptions[val]['source']) {
-              creditString = $photographer.val() + '/' + copyrightOptions[val]['source'];
-          } else {
-              creditString = $photographer.val() + '/' + $source.val();
-          }
+          separator = '/';
+        }
+
+        if (copyrightOptions[val]['source']) {
+          creditString = $photographer.val() + separator + copyrightOptions[val]['source'];
+        } else {
+          creditString = $photographer.val() + separator + $source.val();
         }
     } else {
         if (copyrightOptions[val]['source']) {
