@@ -1,6 +1,6 @@
 // widths and padding
 var canvasWidth = 1024; // this will be the exported width of the image
-var elementPadding = 40; // padding around the logo and credit text
+var elementPadding = 60; // padding around the logo and credit text
 
 // logo configuration
 // the name of the logo object should match the value of the corresponding radio button in the HTML.
@@ -63,14 +63,6 @@ var copyrightOptions = {
         source: 'AP',
         display: 'AP'
     },
-    'getty': {
-        showPhotographer: true,
-        showSource: false,
-        photographerRequired: false,
-        sourceRequired: false,
-        source: 'Getty Images',
-        display: 'Getty'
-    },
     'thirdParty': {
         showPhotographer: true,
         showSource: true,
@@ -86,6 +78,14 @@ var copyrightOptions = {
         sourceRequired: true,
         source: 'Creative Commons',
         display: 'Creative Commons'
+    },
+    'other': {
+        showPhotographer: true,
+        showSource: false,
+        photographerRequired: false,
+        sourceRequired: false,
+        source: '',
+        display: 'Other'
     }
 }
 
