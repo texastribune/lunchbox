@@ -63,14 +63,6 @@ var copyrightOptions = {
         source: 'AP',
         display: 'AP'
     },
-    'getty': {
-        showPhotographer: true,
-        showSource: false,
-        photographerRequired: false,
-        sourceRequired: false,
-        source: 'Getty Images',
-        display: 'Getty'
-    },
     'thirdParty': {
         showPhotographer: true,
         showSource: true,
