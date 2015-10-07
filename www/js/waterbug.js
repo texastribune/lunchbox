@@ -262,10 +262,18 @@ var buildCreditString = function() {
     var val = $copyrightHolder.val();
 
     if ($photographer.val() !== '') {
-        if (copyrightOptions[val]['source']) {
-            creditString = $photographer.val() + '/' + copyrightOptions[val]['source'];
+        if (copyrightOptions['freelance']) {
+          if (copyrightOptions[val]['source']) {
+            creditString = $photographer.val() + ' ' + copyrightOptions[val]['source'];
+          } else {
+              creditString = $photographer.val() + ' ' + $source.val();
+          }
         } else {
-            creditString = $photographer.val() + '/' + $source.val();
+          if (copyrightOptions[val]['source']) {
+              creditString = $photographer.val() + '/' + copyrightOptions[val]['source'];
+          } else {
+              creditString = $photographer.val() + '/' + $source.val();
+          }
         }
     } else {
         if (copyrightOptions[val]['source']) {
