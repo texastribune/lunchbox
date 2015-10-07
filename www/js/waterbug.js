@@ -31,7 +31,8 @@ var dx = 0;
 var image;
 var imageFilename = 'image';
 var currentCopyright;
-var credit = 'Belal Khan/Flickr'
+var credit = 'Belal Khan/Flickr';
+var bottomLeftText;
 var shallowImage = false;
 
 
@@ -44,6 +45,7 @@ var logo = new Image();
 var onDocumentLoad = function(e) {
     $source = $('#source');
     $photographer = $('#photographer');
+    $bottomLeftText = $('#bottom-left-text');
     $canvas = $('#imageCanvas');
     canvas = $canvas[0];
     $imageLoader = $('#imageLoader');
@@ -68,6 +70,7 @@ var onDocumentLoad = function(e) {
     logo.onload = renderCanvas;
 
     $photographer.on('keyup', renderCanvas);
+    $bottomLeftText.on('keyup', renderCanvas);
     $source.on('keyup', renderCanvas);
     $imageLoader.on('change', handleImage);
     $imageLinkButton.on('click', handleImageLink);
@@ -76,10 +79,11 @@ var onDocumentLoad = function(e) {
     $logoColor.on('change', onLogoColorChange);
     $crop.on('change', onCropChange);
     $canvas.on('mousedown touchstart', onDrag);
+    $bottomLeftText.on('change keyup', onBottomLeftTextChange);
     $copyrightHolder.on('change', onCopyrightChange);
     $customFilename.on('click', function(e) {
         e.stopPropagation();
-    })
+    });
 
     $("body").on("contextmenu", "canvas", function(e) {
         return false;
@@ -245,11 +249,19 @@ var renderCanvas = function() {
     }
 
     var creditWidth = ctx.measureText(credit);
-    ctx.fillText(
-        credit,
-        canvas.width - (creditWidth.width + elementPadding),
-        canvas.height - elementPadding
-    );
+      ctx.fillText(
+          credit,
+          canvas.width - (creditWidth.width + elementPadding),
+          canvas.height - elementPadding
+      );
+
+    if (bottomLeftText) {
+      ctx.fillText(
+          bottomLeftText,
+          elementPadding,
+          canvas.height - elementPadding
+      );
+    }
 
     validateForm();
 }
@@ -564,6 +576,12 @@ var onCropChange = function() {
         $dragHelp.hide();
     }
     renderCanvas();
+}
+
+var onBottomLeftTextChange = function() {
+  bottomLeftText = $bottomLeftText.val();
+
+  renderCanvas();
 }
 
 /*

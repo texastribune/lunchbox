@@ -1,6 +1,6 @@
 // widths and padding
 var canvasWidth = 1024; // this will be the exported width of the image
-var elementPadding = 40; // padding around the logo and credit text
+var elementPadding = 60; // padding around the logo and credit text
 
 // logo configuration
 // the name of the logo object should match the value of the corresponding radio button in the HTML.
