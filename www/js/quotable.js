@@ -163,11 +163,6 @@ $(function() {
         }
     });
 
-    $quote.on('click', function() {
-        $(this).find('button').toggleClass('active');
-        $poster.toggleClass('quote');
-    });
-
     $fontSize.on('change', function() {
         adjustFontSize($(this).val());
     });

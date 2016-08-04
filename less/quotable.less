@@ -242,13 +242,6 @@ canvas {
         width: 800px;
         padding: @padding;
 
-        .quote& {
-            .left-quote {
-                top: @padding;
-                left: 80px;
-            }
-        }
-
         blockquote {
             margin-bottom: 20px;
         }
@@ -271,18 +264,6 @@ canvas {
 
         .show-credit {
             font-size: @base-font-size * 1.1;
-        }
-    }
-
-    .quote& {
-        .left-quote {
-            content:@quote-begin-symbol;
-            display: block;
-            position: absolute;
-            top: 80px;
-            left: 80px;
-            font-weight: @quote-font-weight;
-            margin-left: @quote-mark-margin;
         }
     }
 
@@ -318,15 +299,6 @@ canvas {
 
         &:last-child {
             color: red;
-        }
-
-        .quote& {
-
-            p:last-child:after {
-                content: @quote-end-symbol;
-                font-weight: @quote-font-weight;
-            }
-
         }
 
         .show-credit {
