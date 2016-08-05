@@ -6,6 +6,7 @@ var $textColor;
 var $logo;
 var $crop;
 var $logoColor;
+var $logoPosition;
 var $imageLoader;
 var $imageLink;
 var $imageLinkButton;
@@ -56,6 +57,7 @@ var onDocumentLoad = function(e) {
     $textColor = $('input[name="textColor"]');
     $crop = $('input[name="crop"]');
     $logoColor = $('input[name="logoColor"]');
+    $logoPosition = $('input[name="logoPosition"]');
     $qualityQuestions = $('.quality-question');
     $copyrightHolder = $('.copyright-holder');
     $dragHelp = $('.drag-help');
@@ -68,6 +70,7 @@ var onDocumentLoad = function(e) {
     img.onload = onImageLoad;
     logo.src = defaultLogo;
     logo.onload = renderCanvas;
+    currentLogoPosition = 'top';
 
     $photographer.on('keyup', renderCanvas);
     $bottomLeftText.on('keyup', renderCanvas);
@@ -77,6 +80,7 @@ var onDocumentLoad = function(e) {
     $save.on('click', onSaveClick);
     $textColor.on('change', onTextColorChange);
     $logoColor.on('change', onLogoColorChange);
+    $logoPosition.on('change', onLogoPositionChange);
     $crop.on('change', onCropChange);
     $canvas.on('mousedown touchstart', onDrag);
     $bottomLeftText.on('change keyup', onBottomLeftTextChange);
@@ -220,10 +224,17 @@ var renderCanvas = function() {
     } else {
         ctx.globalAlpha = blackLogoAlpha;
     }
+
+    if (currentLogoPosition === 'top') {
+      logoDy = currentLogo === 'npr'? elementPadding : elementPadding - 14;
+    } else {
+      logoDy = canvas.height - (elementPadding * 1.5);
+    }
+
     ctx.drawImage(
         logo,
         elementPadding,
-        currentLogo === 'npr'? elementPadding : elementPadding - 14,
+        logoDy,
         logos[currentLogo]['w'],
         logos[currentLogo]['h']
     );
@@ -537,6 +548,13 @@ var onSaveClick = function(e) {
 */
 var onLogoColorChange = function(e) {
     currentLogoColor = $(this).val();
+
+    loadLogo();
+    renderCanvas();
+}
+
+var onLogoPositionChange = function(e) {
+    currentLogoPosition = $(this).val();
 
     loadLogo();
     renderCanvas();
