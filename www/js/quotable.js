@@ -12,32 +12,34 @@ var $logoWrapper = null;
 
 var quotes = [
     {
-        "quote": "I'd been drinking.",
-        "source": "Dennis Rodman"
+        "quote": "\u201cOn stage, I will say what I damn well please. I will not be silenced.\u201d",
+        "source": "Ted Nugent",
+        "size": 48
     },
     {
-        "quote": "I've made a huge mistake.",
-        "source": "G.O.B."
+        "quote": "\u201cIf Obama is elected, I will either be dead or in jail because I’m on his enemies list.\u201d",
+        "source": "Ted Nugent",
+        "size": 48
     },
     {
-        "quote": "Yes, I have smoked crack cocaine",
-        "source": "Toronto Mayor Rob Ford",
-        "size": 65
-    },
-    {
-        "quote": "Annyong.",
-        "source": "Annyong",
-        "size": 90
-    },
-    {
-        "quote": "STEVE HOLT!",
-        "source": "Steve Holt",
-        "size": 65
-    },
-    {
-        "quote": "Whoa, whoa, whoa. There's still plenty of meat on that bone. Now you take this home, throw it in a pot, add some broth, a potato. Baby, you've got a stew going.",
-        "source": "Carl Weathers",
+        "quote": "\u201cIf they come and get my guns and if they come to take my property, I will either be dead or in jail. Do you really find any ambiguity in that?\u201d",
+        "source": "Ted Nugent",
         "size": 40
+    },
+    {
+        "quote": "\u201cI’m a perfect human being because I stumble perfectly, and if you’re gonna stumble you know what I recommend? Stumble sexually.\u201d",
+        "source": "Ted Nugent",
+        "size": 42
+    },
+    {
+        "quote": "\u201cTed Nugent endorsed my Dad today. Ted Nugent? How cool is that?! He joins Kid Rock as great Detroit musicians on team Mitt!\u201d",
+        "source": "Tagg Romney",
+        "size": 36
+    },
+    {
+        "quote": "\u201cAnybody who fucks with me on the right to defend myself and the right to eat venison is going to lose in a tailspin of agony.\u201d",
+        "source": "Ted Nugent",
+        "size": 42
     }
 ];
 
@@ -158,14 +160,9 @@ $(function() {
             adjustFontSize(32);
             $fontSize.val(32);
         } else {
-            adjustFontSize(90);
-            $fontSize.val(90);
+            adjustFontSize(60);
+            $fontSize.val(60);
         }
-    });
-
-    $quote.on('click', function() {
-        $(this).find('button').toggleClass('active');
-        $poster.toggleClass('quote');
     });
 
     $fontSize.on('change', function() {
